@@ -13,7 +13,15 @@ const SECRET = process.env.JWT_SECRET;
 const allowedOrigins = '*';
 app.use(cors({
   origin: allowedOrigins,
+  methods: 'POST',
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
 }));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'POST');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 app.use(express.json());
 
 // MongoDB Connection
