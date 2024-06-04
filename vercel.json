@@ -1,4 +1,11 @@
 {
+    "version": 2,
+    "builds": [
+        {
+            "src": "index.js",
+            "use": "@vercel/node"
+        }
+    ],
     "routes": [
         {
             "src": "/api/auth",
@@ -7,15 +14,12 @@
     ],
     "headers": [
         {
-            "key": "Access-Control-Allow-Origin",
             "value": "*"
         },
         {
-            "key": "Access-Control-Allow-Methods",
             "value": "GET, POST"
         },
         {
-            "key": "Access-Control-Allow-Headers",
             "value": "Origin, X-Requested-With, Content-Type, Accept"
         }
     ]
