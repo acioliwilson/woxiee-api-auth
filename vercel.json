@@ -9,18 +9,16 @@
     "routes": [
         {
             "src": "/api/auth",
-            "dest": "./index.js"
-        }
-    ],
-    "headers": [
-        {
-            "value": "*"
-        },
-        {
-            "value": "GET, POST"
-        },
-        {
-            "value": "Origin, X-Requested-With, Content-Type, Accept"
+            "methods": [
+                "POST"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "POST",
+                "Access-Control-Allow-Headers": "Content-Type",
+                "Access-Control-Allow-Max-Age": "86400"
+            },
+            "dest": "index.js"
         }
     ]
 }

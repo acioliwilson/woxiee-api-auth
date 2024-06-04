@@ -58,7 +58,7 @@ const authenticateJWT = (req, res, next) => {
 };
 
 // User Routes (Login only)
-app.post('/api/login', async (req, res) => {
+app.post('/api/auth', async (req, res) => {
   const { username, password } = req.body;
   try {
     const user = await User.findOne({ username });
